@@ -29,4 +29,4 @@ def main():
 	return simplejson.dumps(weather_dict)
 
 if __name__ == '__main__':
-	sys.exit(main())
+	sys.stdout.write(main())
