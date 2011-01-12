@@ -4,6 +4,7 @@ import settings
 import pickle
 import pywapi
 import re
+import simplejson
 import sys
 
 def main():
@@ -25,7 +26,7 @@ def main():
 		# Assign the returned value to the new dictionary key
 		weather_dict[key] = value
 	
-	return pickle.dumps(weather_dict)
+	return simplejson.dumps(weather_dict)
 
 if __name__ == '__main__':
 	sys.exit(main())
