@@ -1,7 +1,6 @@
 # Load local settings
 import settings
 
-import pickle
 import pywapi
 import re
 import simplejson
