@@ -6,8 +6,20 @@ LOCATION = '00000'
 # containing the element name along with an optional regular expression,
 # of which the first matching group will be used.
 DATA = {
-	'temp': ['["current_conditions"]["temp_f"]'],
-	'weather': ['["current_conditions"]["condition"]'],
-	'wind-direction': ['["current_conditions"]["wind_condition"]', r'(?<=: )([A-Z]+)'],
-	'wind-speed': ['["current_conditions"]["wind_condition"]', r'(\d+ mph)$']
+  'temp': {
+    'key': '["condition"]["temp"]',
+  },
+  'weather': {
+    'key': '["condition"]["text"]',
+  },
+  'wind-direction': {
+    'key': '["wind"]["direction"]',
+    'format': '%s&deg;',
+  },
+  'wind-speed': {
+    'key': '["wind"]["speed"]',
+    'format': '%s mph',
+  },
 }
+# Units for measurements, if allowed by API ("metric" or empty string)
+UNITS = ''
